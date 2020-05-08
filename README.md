@@ -516,6 +516,7 @@ In your `config.xml`, you can add the following preferences:
 <preference name="SplashMaintainAspectRatio" value="true|false" />
 <preference name="SplashShowOnlyFirstTime" value="true|false" />
 <preference name="SplashScreenSpinnerColor" value="white" />
+<preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF"/>
 ```
 
 `SplashMaintainAspectRatio` preference is optional. If set to `true`, the splash screen drawable is not stretched to fit the full screen, but instead simply "covers" the screen, like CSS "background-size:cover". This is very useful when splash screen images cannot be distorted in any way, for example when they contain scenery or text. This setting works best with images that have large margins (safe areas) that can be safely cropped on screens with different aspect ratios.
@@ -525,6 +526,8 @@ The splash screen plugin reloads the splash screen whenever the orientation chan
 `SplashShowOnlyFirstTime` preference is  optional and defaults to `true`. When set to `true` the splash screen will only appear on application launch. However, if you plan to use `navigator.app.exitApp()` to close the application and force the splash screen appear on the application's next launch, you should set this property to `false` (this also applies to closing the application with the Back button).
 
 `SplashScreenSpinnerColor` preference is also optional and is ignored when not set. Setting it to a valid color name or HEX color code will change the color of the spinner on Android 5.0+ devices.
+
+`SplashScreenBackgroundColor` preference is optional and is ignored when not set. This will be useful when `SplashMaintainAspectRatio` is set to `true`.
 
 #### Browser Quirks
 
